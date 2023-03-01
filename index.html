@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400&display=swap" rel="stylesheet">
+    <title>Menu de Pizzas</title>
+</head>
+<body>
+
+    <div class="nodes">
+
+        <div class="menu-item">
+            <div class="menu-item-left">
+                <img src="" alt="" class="open-modal">
+            </div>
+            <div class="menu-item-right">
+                <div class="right-top">
+                    <h1 class="menu-item-title">--</h1>
+                    <p class="menu-item-desc">--</p>
+                </div>
+                <div class="right-bottom">
+                    <div class="menu-item-price">--</div>
+                    <button class="menu-item-btn open-modal">+ carrinho</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="cart-icon">
+        <img src="assets/img/cart-icon.png" alt="cart icon">
+        <div class="cart-tooltip">-</div>
+    </div>
+
+    <main>
+        <h1 class="menu-title">Menu</h1>
+        <p class="menu-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi iure assumenda sapiente cum aut ipsa dolorem. Aspernatur corporis sit</p>
+        <div class="menu-container">
+            
+        </div>
+    </main>
+
+    <div class="pizza-window-area">
+        <div class="pizza-window-body">
+            <div class="window-body-left">
+                <img src="" alt="">
+            </div>
+            <div class="window-body-right">
+                <h1 class="window-body-title">--</h1>
+                <p class="window-body-desc">--</p>
+                <span class="window-body-sec-title">TAMANHO:</span>
+                <div class="window-body-sizes">
+                    <div data-key="0" class="pizza-size selected">PEQUENO <span>--</span></div>
+                    <div data-key="1" class="pizza-size">MÉDIO <span>--</span></div>
+                    <div data-key="2" class="pizza-size">GRANDE <span>--</span></div>
+                </div>
+                <span class="window-body-sec-title">PREÇO:</span>
+                <div class="window-price-box">
+                    <div class="window-pizza-price">R$<span></span></div>
+                    <div class="pizza-qt-box">
+                        <span class="less">-</span>
+                        <div class="pizza-qt">--</div>
+                        <span class="more">+</span>
+                    </div>
+                </div>
+                <div class="window-body-btns">
+                    <button class="window-add-btn">Adicionar ao carrinho</button>
+                    <button class="window-cancel-btn">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>
