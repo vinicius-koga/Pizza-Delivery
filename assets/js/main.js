@@ -60,7 +60,7 @@ pizzaJson.map((item, index, array) => {
     });
 });
 
-/* CLOSE WINDOW AREA FUNCTION */
+/* CLOSE / OPEN FUNCTIONS */
 function closeWindowArea() {
     document.querySelector('.pizza-window-area').style.opacity = '1';
     setTimeout(() => {
@@ -76,10 +76,44 @@ function closeWindowArea() {
     }, 300);
 }
 
+function closeCart() {
+    document.querySelector('.cart').style.right = '-320px';
+    document.querySelector('.cart-area').style.opacity = '1';
+    setTimeout(() => {
+        document.querySelector('.cart-area').style.opacity = '0';
+    })
+    setTimeout(() => {
+        document.querySelector('.cart-area').style.display = 'none';
+    }, 300)
+}
+
+function openCart() {
+    document.querySelector('.cart-area').style.display = 'block';
+    document.querySelector('.cart-area').style.opacity = '0';
+    setTimeout(() => {
+        document.querySelector('.cart-area').style.opacity = '1';
+    })
+    document.querySelector('.cart').style.right = '-320px';
+    setTimeout(() => {
+        document.querySelector('.cart').style.right = '0';
+    })
+}
+
+document.querySelector('.cart-icon').addEventListener('click', () => {
+    openCart()
+})
+
+document.querySelector('.close-btn').addEventListener('click', () => {
+    closeCart()
+})
+
 /* CLOSE WINDOW AREA BY CLICKING OUT */
 document.addEventListener('click', (e) => {
     if(e.target.classList.contains('pizza-window-area')){
         closeWindowArea();
+    }
+    if(e.target.classList.contains('cart-area')){
+        closeCart();
     }
 });
 
