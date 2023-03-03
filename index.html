@@ -14,6 +14,7 @@
     <title>Pizza Delivery</title>
 </head>
 <body>
+    <!-- Clone Nodes -->
     <div class="nodes">
 
         <div class="menu-item">
@@ -44,12 +45,21 @@
 
     </div>
 
-    <div class="cart-icon">
-        <img src="assets/img/cart-icon.png" alt="cart icon">
-        <div class="cart-tooltip">-</div>
-    </div>
+    <!-- Main Section -->
+    <main>
+        <div class="cart-icon">
+            <img src="assets/img/cart-icon.png" alt="cart icon">
+            <div class="cart-tooltip">-</div>
+        </div>
 
-    <div class="cart-area">
+        <h1 class="menu-title">Menu</h1>
+        <div class="menu-container">
+            
+        </div>
+    </main>
+
+    <!-- Cart Section -->
+    <section class="cart-area">
         <div class="cart">
             <div class="cart-header">
                 <h1>Carrinho</h1>
@@ -74,16 +84,10 @@
                 <button>Finalizar pedido</button>
             </div>
         </div>
-    </div>
+    </section>
 
-    <main>
-        <h1 class="menu-title">Menu</h1>
-        <div class="menu-container">
-            
-        </div>
-    </main>
-
-    <div class="pizza-window-area">
+    <!-- Modal section -->
+    <section class="pizza-window-area">
         <div class="pizza-window-body">
             <div class="window-body-left">
                 <img src="" alt="">
@@ -112,7 +116,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     
     <script type="module" src="./assets/js/main.js"></script>
 </body>

@@ -55,8 +55,6 @@ p {
     transform: skew(-20deg);
     z-index: -1;
 }
-
-
 /* MENU ITENS */
 .menu-container {
     width: 1200px;
