@@ -1,6 +1,7 @@
 import { pizzaJson } from "./pizzaJson.js";
 let defaultQt;
 let pizzaKey;
+let cart = [];
 
 /* MAP */
 pizzaJson.map((item, index, array) => {
@@ -60,6 +61,130 @@ pizzaJson.map((item, index, array) => {
     });
 });
 
+/* BUTTON MORE/LESS PIZZA */
+document.querySelector('.more').addEventListener('click', () => {
+    defaultQt++;
+    document.querySelector('.pizza-qt').innerText = defaultQt;
+
+    let choosedSize = document.querySelector('.pizza-size.selected').getAttribute('data-key');
+    let actualPrice = pizzaJson[pizzaKey].price[choosedSize];
+
+    document.querySelector('.window-pizza-price span').innerText = (actualPrice * defaultQt).toFixed(2);
+});
+document.querySelector('.less').addEventListener('click', () => {
+    if(defaultQt > 0) {
+        defaultQt--;
+        document.querySelector('.pizza-qt').innerText = defaultQt;
+        let choosedSize = document.querySelector('.pizza-size.selected').getAttribute('data-key');
+        let actualPrice = pizzaJson[pizzaKey].price[choosedSize];
+    
+        document.querySelector('.window-pizza-price span').innerText = (actualPrice * defaultQt).toFixed(2);
+    };
+
+    if(defaultQt === 0) {
+        closeWindowArea();
+    };
+});
+
+/* ADD TO CART BUTTON */
+document.querySelector('.window-add-btn').addEventListener('click', () => {
+    let choosedPizza = pizzaJson[pizzaKey];
+    let choosedSize = Number(document.querySelector('.pizza-size.selected').getAttribute('data-key'));
+    let choosedPrice = choosedPizza.price[choosedSize];
+    let amount = Number(document.querySelector('.pizza-qt').innerText);
+    let id = `${pizzaKey}-${choosedSize}`;
+    for(let i in cart) {
+        if(cart[i].id === id) {
+            cart[i].amount += amount;
+            updateCart();
+            closeWindowArea();
+            openCart();
+            console.log(cart);
+            return;
+        }
+    }
+    cart.push({
+        id: id,
+        name: choosedPizza.name,
+        size: choosedSize,
+        amount: amount,
+        img: choosedPizza.img,
+        price: choosedPrice,
+    })
+    console.log(cart);
+    if(cart.length > 0) {
+        updateCart();
+        closeWindowArea();
+        openCart();
+    }
+})
+
+/* UPDATE CART */
+function updateCart() {
+    let cartTooltip = document.querySelector('.cart-tooltip');
+    let cartBody = document.querySelector('.cart-body');
+    cartBody.innerHTML = '';
+
+    if(cart.length > 0) {
+        cartTooltip.style.display = 'block';
+        cartTooltip.innerText = cart.length;
+    }
+
+    let subtotal = 0;
+    let desconto = 0;
+    let total = 0;
+
+    for(let i in cart) {
+        let cartItem = document.querySelector('.cart-item').cloneNode(true);
+        cartBody.append(cartItem);
+        cartItem.querySelector('img').src = cart[i].img;
+        cartItem.querySelector('img').alt = cart[i].name;
+        cartItem.querySelector('p').innerHTML = `${cart[i].name} (${renderCartSize(cart[i].size)})`;
+        cartItem.querySelector('.cart-qt').innerText = cart[i].amount;
+
+        cartItem.querySelector('.cart-less').addEventListener('click', () => {
+            if(cart[i].amount > 0) {
+                cart[i].amount--;
+                updateCart();
+            }
+            if(cart[i].amount === 0) {
+                cart.splice(i, 1);
+                updateCart();
+            }
+            if(cart.length === 0) {
+                closeCart();
+                cartTooltip.style.display = 'none';
+            }
+        })
+
+        cartItem.querySelector('.cart-more').addEventListener('click', () => {
+            cart[i].amount++;
+            updateCart();
+        })
+
+        subtotal += cart[i].price * cart[i].amount;
+        desconto += subtotal * 0.1;
+        total += subtotal - desconto;
+
+        document.querySelector('.cart-subtotal span').innerText = `R$${subtotal.toFixed(2)}`;
+        document.querySelector('.cart-descount span').innerText = `R$${desconto.toFixed(2)}`;
+        document.querySelector('.cart-total span').innerText = `R$${total.toFixed(2)}`;
+    }
+}
+function renderCartSize(size) {
+    switch (size) {
+        case 0:
+            return 'Pequeno';
+        break;
+        case 1:
+            return 'Médio';
+        break;
+        case 2:
+            return 'Grande';
+        break;
+    }
+}
+
 /* CLOSE / OPEN FUNCTIONS */
 function closeWindowArea() {
     document.querySelector('.pizza-window-area').style.opacity = '1';
@@ -76,6 +201,10 @@ function closeWindowArea() {
     }, 300);
 }
 
+document.querySelector('.window-cancel-btn').addEventListener('click', () => {
+    closeWindowArea();
+});
+
 function closeCart() {
     document.querySelector('.cart').style.right = '-320px';
     document.querySelector('.cart-area').style.opacity = '1';
@@ -86,28 +215,33 @@ function closeCart() {
         document.querySelector('.cart-area').style.display = 'none';
     }, 300)
 }
-
-function openCart() {
-    document.querySelector('.cart-area').style.display = 'block';
-    document.querySelector('.cart-area').style.opacity = '0';
-    setTimeout(() => {
-        document.querySelector('.cart-area').style.opacity = '1';
-    })
-    document.querySelector('.cart').style.right = '-320px';
-    setTimeout(() => {
-        document.querySelector('.cart').style.right = '0';
-    })
-}
-
-document.querySelector('.cart-icon').addEventListener('click', () => {
-    openCart()
-})
-
 document.querySelector('.close-btn').addEventListener('click', () => {
     closeCart()
 })
 
-/* CLOSE WINDOW AREA BY CLICKING OUT */
+function openCart() {
+    if(cart.length > 0){
+        document.querySelector('.cart-area').style.display = 'block';
+        document.querySelector('.cart-area').style.opacity = '0';
+        setTimeout(() => {
+            document.querySelector('.cart-area').style.opacity = '1';
+        })
+        document.querySelector('.cart').style.right = '-320px';
+        setTimeout(() => {
+            document.querySelector('.cart').style.right = '0';
+        })
+    }
+    if(cart.length === 0) {
+        document.querySelector('.cart-icon').classList.add('cart-icon-animation');
+        setTimeout(() => {
+            document.querySelector('.cart-icon').classList.remove('cart-icon-animation');
+        }, 820)
+    }
+}
+document.querySelector('.cart-icon').addEventListener('click', () => {
+    openCart()
+})
+
 document.addEventListener('click', (e) => {
     if(e.target.classList.contains('pizza-window-area')){
         closeWindowArea();
@@ -117,34 +251,8 @@ document.addEventListener('click', (e) => {
     }
 });
 
-/* CLOSE WINDOW AREA BUTTON */
-document.querySelector('.window-cancel-btn').addEventListener('click', () => {
-    closeWindowArea();
-});
+/*  */
+document.querySelector('.cart-btn').addEventListener('click', () => {
+    alert('Agora é com o back-end :)')
+})
 
-/* BUTTON MORE PIZZA */
-document.querySelector('.more').addEventListener('click', () => {
-    defaultQt++;
-    document.querySelector('.pizza-qt').innerText = defaultQt;
-
-    let choosedSize = document.querySelector('.pizza-size.selected').getAttribute('data-key');
-    let actualPrice = pizzaJson[pizzaKey].price[choosedSize];
-
-    document.querySelector('.window-pizza-price span').innerText = (actualPrice * defaultQt).toFixed(2);
-});
-
-/* BUTTON LESS PIZZA */
-document.querySelector('.less').addEventListener('click', () => {
-    if(defaultQt > 0) {
-        defaultQt--;
-        document.querySelector('.pizza-qt').innerText = defaultQt;
-        let choosedSize = document.querySelector('.pizza-size.selected').getAttribute('data-key');
-        let actualPrice = pizzaJson[pizzaKey].price[choosedSize];
-    
-        document.querySelector('.window-pizza-price span').innerText = (actualPrice * defaultQt).toFixed(2);
-    };
-
-    if(defaultQt === 0) {
-        closeWindowArea();
-    };
-});
