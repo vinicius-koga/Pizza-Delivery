@@ -1,13 +1,13 @@
 let pizzaJson = [
-    {id:1, name:'Mussarela', img:'./assets/img/pizza01.jpg', price:[20.99, 27.99, 38.99], sizes:['100g', '530g', '860g'], description:'Descrição da pizza contendo os ingredientes.'},
-    {id:2, name:'Calabresa', img:'./assets/img/pizza02.jpg', price:[18.99, 25.99, 32.99], sizes:['320g', '530g', '860g'], description:'Descrição da pizza contendo os ingredientes.'},
-    {id:3, name:'Australiana', img:'./assets/img/pizza03.jpg', price:[17.99, 27.99, 39.99], sizes:['320g', '530g', '860g'], description:'Descrição da pizza contendo os ingredientes.'},
-    {id:4, name:'Americana', img:'./assets/img/pizza04.jpg', price:[19.99, 24.99, 37.99], sizes:['320g', '530g', '860g'], description:'Descrição da pizza contendo os ingredientes.'},
-    {id:5, name:'Portuguesa', img:'./assets/img/pizza05.jpg', price:[21.99, 26.99, 35.99], sizes:['320g', '530g', '860g'], description:'Descrição da pizza contendo os ingredientes.'},
-    {id:6, name:'Atum', img:'./assets/img/pizza06.jpg', price:[18.99, 23.99, 38.99], sizes:['320g', '530g', '860g'], description:'Descrição da pizza contendo os ingredientes.'},
-    {id:7, name:'Vegetariana', img:'./assets/img/pizza07.jpg', price:[20.99, 28.99, 38.99], sizes:['320g', '530g', '860g'], description:'Descrição da pizza contendo os ingredientes.'},
-    {id:8, name:'Brocolis', img:'./assets/img/pizza08.jpg', price:[25.99, 35.99, 45.99], sizes:['320g', '530g', '860g'], description:'Descrição da pizza contendo os ingredientes.'},
-    {id:9, name:'Mexicana', img:'./assets/img/pizza09.jpg', price:[30.99, 35.99, 45.99], sizes:['320g', '530g', '860g'], description:'Descrição da pizza contendo os ingredientes.'},
+    {id:1, name:'Mussarela', img:'./assets/img/pizza01.jpg', price:[20.00, 27.00, 38.00], sizes:['100g', '530g', '860g'], description:'Descrição da pizza contendo os ingredientes.'},
+    {id:2, name:'Calabresa', img:'./assets/img/pizza02.jpg', price:[18.00, 25.00, 32.00], sizes:['320g', '530g', '860g'], description:'Descrição da pizza contendo os ingredientes.'},
+    {id:3, name:'Australiana', img:'./assets/img/pizza03.jpg', price:[17.00, 27.00, 39.00], sizes:['320g', '530g', '860g'], description:'Descrição da pizza contendo os ingredientes.'},
+    {id:4, name:'Americana', img:'./assets/img/pizza04.jpg', price:[19.00, 24.00, 37.00], sizes:['320g', '530g', '860g'], description:'Descrição da pizza contendo os ingredientes.'},
+    {id:5, name:'Portuguesa', img:'./assets/img/pizza05.jpg', price:[21.00, 26.00, 35.00], sizes:['320g', '530g', '860g'], description:'Descrição da pizza contendo os ingredientes.'},
+    {id:6, name:'Atum', img:'./assets/img/pizza06.jpg', price:[18.00, 23.00, 38.00], sizes:['320g', '530g', '860g'], description:'Descrição da pizza contendo os ingredientes.'},
+    {id:7, name:'Vegetariana', img:'./assets/img/pizza07.jpg', price:[20.00, 28.00, 38.00], sizes:['320g', '530g', '860g'], description:'Descrição da pizza contendo os ingredientes.'},
+    {id:8, name:'Brocolis', img:'./assets/img/pizza08.jpg', price:[25.00, 35.00, 45.00], sizes:['320g', '530g', '860g'], description:'Descrição da pizza contendo os ingredientes.'},
+    {id:9, name:'Mexicana', img:'./assets/img/pizza09.jpg', price:[30.00, 35.00, 45.00], sizes:['320g', '530g', '860g'], description:'Descrição da pizza contendo os ingredientes.'},
 ]
 
 export {pizzaJson};

@@ -139,7 +139,7 @@ p {
     left: 0;
     right: 0;
     height: 100lvh;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.2);
     display: none;
     justify-content: center;
     align-items: center;
@@ -330,7 +330,7 @@ p {
     left: 0;
     right: 0;
     height: 100lvh;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
     display: none;
 }
