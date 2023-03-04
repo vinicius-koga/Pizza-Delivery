@@ -99,7 +99,6 @@ document.querySelector('.window-add-btn').addEventListener('click', () => {
             updateCart();
             closeWindowArea();
             openCart();
-            console.log(cart);
             return;
         }
     }
@@ -111,7 +110,6 @@ document.querySelector('.window-add-btn').addEventListener('click', () => {
         img: choosedPizza.img,
         price: choosedPrice,
     })
-    console.log(cart);
     if(cart.length > 0) {
         updateCart();
         closeWindowArea();
