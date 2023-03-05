@@ -177,8 +177,8 @@ function updateCart() {
         })
 
         subtotal += cart[i].price * cart[i].amount;
-        desconto += subtotal * 0.1;
-        total += subtotal - desconto;
+        desconto = subtotal * 0.1;
+        total = subtotal - desconto;
 
         document.querySelector('.cart-subtotal span').innerText = `R$${subtotal.toFixed(2)}`;
         document.querySelector('.cart-descount span').innerText = `R$${desconto.toFixed(2)}`;
