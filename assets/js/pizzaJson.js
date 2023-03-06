@@ -9,5 +9,3 @@ let pizzaJson = [
     {id:8, name:'Brocolis', img:'./assets/img/pizza08.jpg', price:[25.00, 35.00, 45.00], sizes:['320g', '530g', '860g'], description:'Descrição da pizza contendo os ingredientes.'},
     {id:9, name:'Mexicana', img:'./assets/img/pizza09.jpg', price:[30.00, 35.00, 45.00], sizes:['320g', '530g', '860g'], description:'Descrição da pizza contendo os ingredientes.'},
 ]
-
-export {pizzaJson};

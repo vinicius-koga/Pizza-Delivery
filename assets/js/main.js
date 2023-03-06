@@ -1,4 +1,3 @@
-import { pizzaJson } from "./pizzaJson.js";
 let defaultQt;
 let pizzaKey;
 let cart = [];
