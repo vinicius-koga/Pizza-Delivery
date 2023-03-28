@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400&display=swap" rel="stylesheet">
+    <title>Pizza Delivery</title>
+</head>
+<body>
+    <!-- Clone Nodes -->
+    <div class="nodes">
+
+        <div class="menu-item">
+            <div class="menu-item-left">
+                <img src="" alt="" class="open-modal">
+            </div>
+            <div class="menu-item-right">
+                <div class="right-top">
+                    <h1 class="menu-item-title open-modal">--</h1>
+                    <p class="menu-item-desc">--</p>
+                </div>
+                <div class="right-bottom">
+                    <div class="menu-item-price">--</div>
+                    <button class="menu-item-btn open-modal">+ carrinho</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-item">
+            <img src="" alt="">
+            <p>--<span>(--)</span></p>
+            <div class="cart-qt-box">
+                <span class="cart-less cart-amount-btn">-</span>
+                <div class="cart-qt">--</div>
+                <span class="cart-more cart-amount-btn">+</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Main Section -->
+    <main>
+        <div class="cart-icon">
+            <img src="assets/img/cart-icon.png" alt="cart icon">
+            <div class="cart-tooltip">-</div>
+        </div>
+
+        <h1 class="menu-title">Menu</h1>
+        <div class="menu-container">
+            
+        </div>
+    </main>
+
+    <!-- Cart Section -->
+    <section class="cart-area">
+        <div class="cart">
+            <div class="cart-header">
+                <h1>Carrinho</h1>
+                <img class="close-btn" src="./assets/img/close-btn.png" alt="Close button">
+            </div>
+            <div class="cart-body">
+
+            </div>
+            <div class="cart-subtotal cart-values">
+                <p>Subtotal</p>
+                <span>--</span>
+            </div>
+            <div class="cart-descount cart-values">
+                <p>Desconto (-10%)</p>
+                <span>--</span>
+            </div>
+            <div class="cart-total cart-values">
+                <p>Total</p>
+                <span>--</span>
+            </div>
+            <div class="cart-btn">
+                <button>Finalizar pedido</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal section -->
+    <section class="pizza-window-area">
+        <div class="pizza-window-body">
+            <div class="window-body-left">
+                <img src="" alt="">
+            </div>
+            <div class="window-body-right">
+                <h1 class="window-body-title">--</h1>
+                <p class="window-body-desc">--</p>
+                <span class="window-body-sec-title">TAMANHO:</span>
+                <div class="window-body-sizes">
+                    <div data-key="0" class="pizza-size selected">PEQUENO <span>--</span></div>
+                    <div data-key="1" class="pizza-size">MÉDIO <span>--</span></div>
+                    <div data-key="2" class="pizza-size">GRANDE <span>--</span></div>
+                </div>
+                <span class="window-body-sec-title">PREÇO:</span>
+                <div class="window-price-box">
+                    <div class="window-pizza-price">R$<span></span></div>
+                    <div class="pizza-qt-box">
+                        <span class="less">-</span>
+                        <div class="pizza-qt">--</div>
+                        <span class="more">+</span>
+                    </div>
+                </div>
+                <div class="window-body-btns">
+                    <button class="window-add-btn">Adicionar ao carrinho</button>
+                    <button class="window-cancel-btn">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./assets/js/pizzaJson.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
