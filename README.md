@@ -1,6 +1,6 @@
 # Pizza Delivery
 
-Este site foi feito em cima de um arquivo JS contendo um array de objetos com o intuito de simular um arquivo JSON. Basta alterar as informações dos objetos para que o menu do site e todas as suas funcionalidades sejam atualizadas.
+Website responsivo desenvolvido em HTML, CSS e Javascript. Utilizei mapeamento de objetos para obter uma fácil manipulação do catálogo de pizzas, possibilitei adicionar e gerenciar os itens em seu carrinho de compras, e um dos recursos em destaque é a possibilidade de fechar a página e não perder os itens previamente adicionados!
 
 ### Tecnologias Utilizadas:
 <ul>
