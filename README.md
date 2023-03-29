@@ -8,5 +8,3 @@ Website responsivo desenvolvido em HTML, CSS e Javascript. Utilizei mapeamento d
   <li>CSS</li>
   <li>JAVASCRIPT</li>
 </ul>
-
-### !!Site em desenvolvimento!!
