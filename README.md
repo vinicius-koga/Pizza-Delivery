@@ -8,3 +8,5 @@ Website responsivo que simula compra de pizzas de diferentes tipos e tamanhos. U
   <li>CSS</li>
   <li>JAVASCRIPT</li>
 </ul>
+
+### Este site é responsivo à dispositivos mobile
