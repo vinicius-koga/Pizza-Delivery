@@ -1,6 +1,6 @@
 # Pizza Delivery
 
-Neste website utilizei mapeamento de objetos para obter uma fácil manipulação do catálogo de pizzas e possibilitei gerenciar os itens do carrinho de compras. Um dos recursos em destaque é a possibilidade de fechar a página e não perder os itens do carrinho.
+Website responsivo que simula compra de pizzas de diferentes tipos e tamanhos. Utilizei mapeamento de objetos para obter uma fácil manipulação do catálogo e possibilitei gerenciar os itens do carrinho de compras. Um dos recursos em destaque é a possibilidade de fechar a página e não perder os itens adicionados.
 
 ### Tecnologias Utilizadas:
 <ul>
