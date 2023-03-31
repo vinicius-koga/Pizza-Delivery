@@ -1,6 +1,6 @@
 # Pizza Delivery
 
-Neste website utilizei mapeamento de objetos para obter uma fácil manipulação do catálogo de pizzas, possibilitei adicionar e gerenciar os itens em seu carrinho de compras, e um dos recursos em destaque é a possibilidade de fechar a página e não perder os itens previamente adicionados!
+Neste website utilizei mapeamento de objetos para obter uma fácil manipulação do catálogo de pizzas e possibilitei gerenciar os itens do carrinho de compras. Um dos recursos em destaque é a possibilidade de fechar a página e não perder os itens do carrinho.
 
 ### Tecnologias Utilizadas:
 <ul>
